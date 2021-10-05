@@ -1,0 +1,222 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Deedy - One Page Two Column Resume
+% LaTeX Template
+% Version 1.2 (16/9/2014)
+%
+% Original author:
+% Debarghya Das (http://debarghyadas.com)
+%
+% Original repository:
+% https://github.com/deedydas/Deedy-Resume
+%
+% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
+%
+% This template uses several fonts not included with Windows/Linux by
+% default. If you get compilation errors saying a font is missing, find the line
+% on which the font is used and either change it to a font included with your
+% operating system or comment the line out to use the default font.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% TODO:
+% 1. Integrate biber/bibtex for article citation under publications.
+% 2. Figure out a smoother way for the document to flow onto the next page.
+% 3. Add styling information for a "Projects/Hacks" section.
+% 4. Add location/address information
+% 5. Merge OpenFont and MacFonts as a single sty with options.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% CHANGELOG:
+% v1.1:
+% 1. Fixed several compilation bugs with \renewcommand
+% 2. Got Open-source fonts (Windows/Linux support)
+% 3. Added Last Updated
+% 4. Move Title styling into .sty
+% 5. Commented .sty file.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Known Issues:
+% 1. Overflows onto second page if any column's contents are more than the
+% vertical limit
+% 2. Hacky space on the first bullet point on the second column.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[]{deedy-resume-openfont}
+\usepackage{fancyhdr}
+ 
+\pagestyle{fancy}
+\fancyhf{}
+ 
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     TITLE NAME
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\namesection{Gabriel}{Robles}{
+    \urlstyle{same}
+    \href{https://www.linkedin.com/in/garobles}{linkedin.com/in/garobles} $\bullet$
+    \href{https://www.github.com/garobles}{github.com/garobles} $\bullet$
+    \href{mailto:garobles@uwaterloo.ca}{garobles@uwaterloo.ca} 
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN ONE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{minipage}[t]{0.33\textwidth} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EDUCATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Education} 
+
+\subsection{University of Waterloo}
+\descript{4A - Software Engineering}
+\location{Expected Graduation April 2022}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     SKILLS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Programming}
+\descript{Proficient}
+C \textbullet{} C++ \textbullet{} Python \\
+\descript{Experienced}
+Java \textbullet{} Scala \textbullet{} Javascript \textbullet{} SQL \\
+Shell \textbullet{} Assembly \textbullet{} OpenGL \textbullet{} OpenCV \\
+Android \textbullet{} Matlab\\
+\descript{Familiar}
+HTML \textbullet{} CSS \textbullet{} JQuery \textbullet{} React \\
+Go \textbullet{} Rails
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Projects
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Projects}
+\descript{Puppet Pose}
+A graphical application written in \textbf{C++} that allows to manipulate a 3D puppet. It uses
+\textbf{OpenGL} to render the scene.
+\sectionsep
+
+\descript{Ray Tracer}
+    An implementation of a Ray Tracer written in \textbf{C++} to render a scene. Implemented a second version in \textbf{CUDA} for parallelized execution.
+\sectionsep
+
+\descript{Lacs Mini Compiler}
+    Compiler for a programming language subset of Scala (Lacs) written in \textbf{Scala}. It implements math operations, function calls, nested procedures, closures and a garbage collector.
+\sectionsep
+
+\descript{Tetris}
+The classic tile-matching puzzle game written in \textbf{C++}. The game supports a \textbf{graphical} interface for X11; several levels of difficulty; and a customizable input system.
+\sectionsep
+
+\descript{PDF Reader}
+An \textbf{Android} application written in \textbf{Java} to read, draw and highlight PDFs.
+\sectionsep
+
+\descript{Paint on Arduino}
+A sketching program written in \textbf{C} for the \textbf{Arduino} platform. A touch LCD screen was used for I/O, and it allows to save the sketches as SVG files.
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN TWO
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{minipage} 
+\hfill
+\begin{minipage}[t]{0.66\textwidth} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EXPERIENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Experience}
+\runsubsection{Side Effects Software Inc} 
+\descript{3D Software Developer}
+\location{January 2021 - April 2021 | Toronto , ON}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+    \item Researched and prototyped a novel method to deform volumetric data, iterating over different algorithms to obtain the most performant and precise one
+    \item Discussed the features with the technical director and implemented the chosen algorithm in \textbf{C++}
+    \item Used  the \textbf{tbb} library to parallelize the execution of the algorithm, resulting in performance improvement of 600\%.
+\end{tightemize}
+\location{September 2019 – December 2019 | Toronto, ON}
+\begin{tightemize}
+    \item Implemented a physically based sculpting tool using \textbf{Python} and Houdini's procedural nodes. This tool allows to modify meshes by applying grab, twist, scale or pinch brushes
+    \item Implemented a user interface for the sculpting tool using \textbf{Python} to allow users to interactively modify polygon meshes
+    \item Improved performance by \textbf{profiling} the tool reducing calculation time by 70\%
+    %\item Documented the sculpting tool to ease its introduction to CG artists
+\end{tightemize}
+\sectionsep
+
+\runsubsection{Derivative}
+\descript{Graphics Engine Developer}
+\location{May 2020 – August 2020 | Toronto, ON}
+\begin{tightemize}
+    \item Implemented several texture operators using \textbf{C++} and \textbf{CUDA} which expose \textbf{OpenCV} functionality to digital artists
+    \item Implement a surface operator in \textbf{C++} which generates random points inside a mesh or on its surface. Apply several optimizations so the tool runs in realtime
+    \item Implemented a code generation script in \textbf{Python} to generate boilerplate C++ code used to setup UI parameters
+\end{tightemize}
+\sectionsep
+
+\runsubsection{University of Hawaii}
+\descript{Research Assistant}
+\location{January 2019 - April 2019 | Honolulu, HI}
+\begin{tightemize}
+    \item Created a GUI application, using \textbf{Visual C++} and the \textbf{MFC} library, to produce a variety of droplets shapes used for biosurface research
+    \item Improved the ADSA \textbf{algorithm}, which calculates the surface tension of a liquid by analysing an image of a drop, such that it can work for incomplete droplets
+    \item Replaced optimization library from minpack to dlib \textbf{doubling the speed} of the ADSA algorithm
+    %\item Refactored and debugged legacy code, improving \textbf{readability} and \textbf{correctness}
+\end{tightemize}
+\sectionsep
+
+\runsubsection{Behaviour Interactive}
+\descript{Game Programmer for Deathgarden}
+\location{May 2018 - August 2018 | Montreal, QC}
+\begin{tightemize}
+    \item Implemented game analytics using \textbf{Unreal Engine 4, C++, Docker, and Node.js} which helped game designers to balance the game
+    %\item Designed, discussed, and implemented strategies to reuse code, in order to improve \textbf{scalability and maintainability}
+    \item Programmed game components using \textbf{UE4} subsystems and its \textbf{networking} features, improving in-game communication
+\end{tightemize}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     AWARDS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Awards} 
+\vspace{\topsep}
+\begin{tightemize}
+    \item “Becas para los Grupos De Alto Rendimiento”, Full Scholarship awarded to the top 0.1\% on the Ecuadorian standardized test.
+    %\item \textbf{“Becas para los Grupos De Alto Rendimiento de Carreras Técnicas y Tercer Nivel”}, Full Scholarship awarded to the top 0.1\% on the Ecuadorian standardized test “ENES”
+%    \item University of Waterloo President's Scholarship of Distinction, Awarded to students admitted with an admission average of 95\% or higher
+    \item Term Dean's Honours List for four out of five academic terms.
+\end{tightemize}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     PUBLICATIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Publications} 
+\renewcommand\refname{\vskip -1.5em} % Couldn't get this working from the .cls file
+\bibliographystyle{abbrv}
+\bibliography{./publications}
+\nocite{*}
+
+\end{minipage} 
+\end{document}  \documentclass[]{article}
